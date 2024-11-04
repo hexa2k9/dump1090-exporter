@@ -8,9 +8,7 @@ RUN set -eux \
   && apk add musl-dev gcc \
   && pip install virtualenv \
   && virtualenv /opt/virtualenv \
-  && /opt/virtualenv/bin/pip install -e . \
-  && /opt/virtualenv/bin/python setup.py bdist_wheel \
-  && /opt/virtualenv/bin/pip install dist/*.whl
+  && /opt/virtualenv/bin/pip install .
 
 FROM python:3.12-alpine3.20
 
