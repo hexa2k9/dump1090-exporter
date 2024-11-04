@@ -12,8 +12,6 @@ RUN set -eux \
   && /opt/virtualenv/bin/python setup.py bdist_wheel \
   && /opt/virtualenv/bin/pip install dist/*.whl
 
-#  && /opt/virtualenv/bin/pip install -r requirements.txt \
-
 FROM python:3.12-alpine3.20
 
 ENV PYTHONUNBUFFERED=1
