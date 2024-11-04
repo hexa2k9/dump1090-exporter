@@ -15,6 +15,9 @@ FROM python:3.12-alpine3.20
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 
+RUN set -eux \
+    && apk --no-cache upgrade
+
 COPY --from=builder /opt/virtualenv /opt/virtualenv
 
 EXPOSE 9105
