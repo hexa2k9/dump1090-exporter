@@ -50,7 +50,7 @@ if __name__ == "__main__":
         install_requires=parse_requirements("requirements.txt"),
         extras_require={
             "develop": parse_requirements("requirements.dev.txt"),
-            "uvloop": ["uvloop==0.16.0"],
+            "uvloop": ["uvloop==0.21.0"],
         },
         classifiers=[
             "Development Status :: 5 - Production/Stable",
