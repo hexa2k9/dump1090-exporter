@@ -22,5 +22,5 @@ COPY --from=builder /opt/virtualenv /opt/virtualenv
 
 EXPOSE 9105
 
-ENTRYPOINT [ "/opt/virtualenv/bin/dump1090exporter" ]
+ENTRYPOINT [ "/opt/virtualenv/bin/python", "/opt/virtualenv/bin/dump1090exporter" ]
 CMD ["-h"]
