@@ -1,5 +1,3 @@
--r requirements.txt
-
 asynctest==0.13.0
 black==24.10.0
 coverage==7.6.10
