@@ -8,6 +8,7 @@ import datetime
 import json
 import logging
 import math
+import time
 from math import asin, atan, cos, degrees, radians, sin, sqrt
 from typing import Any, Dict, NamedTuple, Optional, Sequence, Tuple
 
@@ -317,7 +318,7 @@ class Dump1090Exporter:
 
         # aircraft
         d = self.metrics["aircraft"]
-        for (name, label, doc) in Specs["aircraft"]:  # type: ignore
+        for name, label, doc in Specs["aircraft"]:  # type: ignore
             d[name] = create_gauge_metric(label, doc, prefix=self.prefix)
 
         # statistics
@@ -336,7 +337,7 @@ class Dump1090Exporter:
             try:
                 async with aiohttp.ClientSession() as session:
                     async with session.get(
-                        resource, timeout=self.fetch_timeout
+                        resource, timeout=self.fetch_timeout, params={"ts": time.time()}
                     ) as resp:
                         if not resp.status == 200:
                             raise Exception(f"Fetch failed {resp.status}: {resource}")
