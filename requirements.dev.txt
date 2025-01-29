@@ -1,5 +1,5 @@
 asynctest==0.13.0
-black==24.10.0
+black==25.1.0
 coverage==7.6.10
 isort==6.0.0
 wheel==0.45.1
