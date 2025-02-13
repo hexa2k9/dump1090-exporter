@@ -1,6 +1,6 @@
 asynctest==0.13.0
 black==25.1.0
-coverage==7.6.11
+coverage==7.6.12
 isort==6.0.0
 wheel==0.45.1
 mypy==1.15.0
