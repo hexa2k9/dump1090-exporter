@@ -1,3 +1,3 @@
-aiohttp==3.12.6
+aiohttp==3.12.9
 aioprometheus[aiohttp]==23.12.0
 setuptools==80.9.0
