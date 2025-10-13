@@ -4,4 +4,4 @@ coverage==7.10.7
 isort==7.0.0
 wheel==0.46.1
 mypy==1.18.2
-pylint==3.3.9
+pylint==4.0.0
