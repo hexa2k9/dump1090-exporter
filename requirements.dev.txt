@@ -3,5 +3,5 @@ black==25.11.0
 coverage==7.13.1
 isort==7.0.0
 wheel==0.46.1
-mypy==1.19.0
+mypy==1.19.1
 pylint==4.0.3
