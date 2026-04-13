@@ -117,7 +117,16 @@ def main():
     if args.latitude and args.longitude:
         args.origin = (args.latitude, args.longitude)
 
-    loop = asyncio.get_event_loop()
+    # Try to get the running event loop first, and if there isn't one, create a new one.
+    # This handles the Python 3.14+ behavior where get_event_loop() raises RuntimeError
+    # when there's no current event loop in the main thread
+    try:
+        loop = asyncio.get_event_loop()
+    except RuntimeError:
+        # No running event loop, create and set a new one
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+
     mon = Dump1090Exporter(
         resource_path=args.resource_path,
         host=args.host,
